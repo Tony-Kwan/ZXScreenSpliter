@@ -10,6 +10,14 @@
 
 #import <Cocoa/Cocoa.h>
 
+#pragma mark - C method
+void TestTravelArray(const void *value, void *context) {
+    NSLog(@"%@", value);
+}
+#pragma mark
+
+
+
 @interface ZXScreenSpliter()
 @property (nonatomic, strong) NSMutableDictionary *appDict;
 @end
@@ -41,12 +49,25 @@
 - (AXUIElementRef) getTopWindowRef {
     NSRunningApplication *app = [[NSWorkspace sharedWorkspace] frontmostApplication];
     AXUIElementRef ref = AXUIElementCreateApplication([app processIdentifier]);
-    CFArrayRef windowArray;
-    AXUIElementCopyAttributeValue(ref, kAXWindowsAttribute, (CFTypeRef*)&windowArray);
-    if(windowArray == NULL || CFArrayGetCount(windowArray)==0) {
+    AXUIElementRef focusWindowRef;
+    AXError err = AXUIElementCopyAttributeValue(ref, kAXFocusedWindowAttribute, (CFTypeRef*)&focusWindowRef);
+    if(err) {
         return NULL;
     }
-    AXUIElementRef windowRef = (AXUIElementRef)CFArrayGetValueAtIndex(windowArray, 0);
+    return focusWindowRef;
+    
+    CFArrayRef windowArray;
+    AXError error = AXUIElementCopyAttributeValue(ref, kAXWindowsAttribute, (CFTypeRef*)&windowArray);
+    if(error || windowArray == NULL || CFArrayGetCount(windowArray) == 0) {
+        return  NULL;
+    }
+    
+    CFIndex count = CFArrayGetCount(windowArray);
+    if(windowArray == NULL || count == 0) {
+        return NULL;
+    }
+    AXUIElementRef windowRef = (AXUIElementRef)CFArrayGetValueAtIndex(windowArray, 1);
+    CFArrayApplyFunction(windowArray, CFRangeMake(0, count), TestTravelArray, nil);
     return windowRef;
 }
 

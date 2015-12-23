@@ -12,11 +12,12 @@
 
 - (CGRect) calculateDstFrame {
     CGRect frame = [[NSScreen mainScreen] visibleFrame];
-    frame.origin.y = 0;
+    if(self.toIndex > 4) return frame;
+    
     CGFloat halfWidth = floor(CGRectGetWidth(frame)/2.f);
     CGFloat halfHeight = floor(CGRectGetHeight(frame)/2.f);
-    frame.origin.x = (self.toIndex % 2) * halfWidth;
-    frame.origin.y = (self.toIndex / 2) * halfHeight;
+    frame.origin.x += (self.toIndex % 2) * halfWidth;
+    frame.origin.y = (self.toIndex / 2) * halfHeight + 23;
     frame.size.width = halfWidth;
     frame.size.height = halfHeight;
     return frame;

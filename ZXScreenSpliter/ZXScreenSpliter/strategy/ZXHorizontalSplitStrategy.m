@@ -18,7 +18,7 @@
     if(self.isToLeft == NO) {
         dstFrame.origin.x = (frame.origin.x + frame.size.width) - dstwidth;
     }
-    dstFrame.origin.y = 0;
+    dstFrame.origin.y = 23;
     return dstFrame;
 }
 

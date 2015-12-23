@@ -12,7 +12,7 @@
 
 - (CGRect) calculateDstFrame {
     CGRect frame = [[NSScreen mainScreen] visibleFrame];
-    frame.origin.y = 0;
+    frame.origin.y = 23;
     return frame;
 }
 

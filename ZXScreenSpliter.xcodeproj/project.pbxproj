@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9B2604B1C2ACED300747FED /* ZXSuDoKuSplitStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B2604A1C2ACED300747FED /* ZXSuDoKuSplitStrategy.m */; };
 		E9C7C53C1C2AC236001B4231 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7C53B1C2AC236001B4231 /* AppDelegate.m */; };
 		E9C7C53F1C2AC236001B4231 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7C53E1C2AC236001B4231 /* main.m */; };
 		E9C7C5421C2AC236001B4231 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7C5411C2AC236001B4231 /* ViewController.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E9B260491C2ACED300747FED /* ZXSuDoKuSplitStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXSuDoKuSplitStrategy.h; sourceTree = "<group>"; };
+		E9B2604A1C2ACED300747FED /* ZXSuDoKuSplitStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXSuDoKuSplitStrategy.m; sourceTree = "<group>"; };
 		E9C7C5371C2AC236001B4231 /* ZXScreenSpliter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZXScreenSpliter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C7C53A1C2AC236001B4231 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E9C7C53B1C2AC236001B4231 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 				E9C7C5551C2AC256001B4231 /* ZXQuarterSplitStrategy.m */,
 				E9C7C5571C2AC256001B4231 /* ZXVerticalSplitStrategy.h */,
 				E9C7C5581C2AC256001B4231 /* ZXVerticalSplitStrategy.m */,
+				E9B260491C2ACED300747FED /* ZXSuDoKuSplitStrategy.h */,
+				E9B2604A1C2ACED300747FED /* ZXSuDoKuSplitStrategy.m */,
 			);
 			path = strategy;
 			sourceTree = "<group>";
@@ -201,6 +206,7 @@
 				E9C7C53F1C2AC236001B4231 /* main.m in Sources */,
 				E9C7C55D1C2AC256001B4231 /* ZXFullScreenSplitStrategy.m in Sources */,
 				E9C7C5601C2AC256001B4231 /* ZXVerticalSplitStrategy.m in Sources */,
+				E9B2604B1C2ACED300747FED /* ZXSuDoKuSplitStrategy.m in Sources */,
 				E9C7C53C1C2AC236001B4231 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +311,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ZXScreenSpliter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = pygzx.ZXScreenSpliter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -317,6 +324,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = ZXScreenSpliter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = pygzx.ZXScreenSpliter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -341,6 +349,7 @@
 				E9C7C54D1C2AC236001B4231 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

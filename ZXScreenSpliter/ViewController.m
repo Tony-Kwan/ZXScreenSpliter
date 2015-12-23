@@ -15,6 +15,7 @@
 #import "ZXHorizontalSplitStrategy.h"   //1X2
 #import "ZXVerticalSplitStrategy.h"     //2X1
 #import "ZXQuarterSplitStrategy.h"      //2X2
+#import "ZXSuDoKuSplitStrategy.h"       //3X3
 
 @interface ViewController ()
 @property (nonatomic, strong) ZXScreenSpliter *screenSpliter;
@@ -34,7 +35,7 @@
     [self.hotKeyMonitor setOnHotKeyPressed:^(NSString *hotKey, unsigned int hotKeyIndex) {
         NSLog(@"%@ %zd", hotKey, hotKeyIndex);
         
-        id<ZXScreenSplitStrategy> splitStrategy = [weakSelf createStrategyWithIndex:hotKeyIndex];
+        id<ZXScreenSplitStrategy> splitStrategy = [weakSelf createNormalStrategyWithIndex:hotKeyIndex];
         if(splitStrategy != nil) {
             [weakSelf splitScreenWithSplitStrategy:splitStrategy];
         }
@@ -44,9 +45,10 @@
 - (void) splitScreenWithSplitStrategy:(id<ZXScreenSplitStrategy>)strategy {
     CGRect dstFrame = [strategy calculateDstFrame];
     NSLog(@"dstFrame = %@  visiableFrame = %@  ScreenFrame = %@  moveSucc = %d   meunBarHeight = %f", NSStringFromRect(dstFrame), NSStringFromRect([NSScreen mainScreen].visibleFrame), NSStringFromRect([NSScreen mainScreen].frame), [self.screenSpliter moveTopWindowToFrame:dstFrame], [[[NSApplication sharedApplication] mainMenu] menuBarHeight]);
+    NSLog(@"----------------------------------------");
 }
 
-- (id<ZXScreenSplitStrategy>) createStrategyWithIndex:(unsigned int)index {
+- (id<ZXScreenSplitStrategy>) createNormalStrategyWithIndex:(unsigned int)index {
     id<ZXScreenSplitStrategy> strategy = nil;
     
     switch (index) {
@@ -57,7 +59,8 @@
             break;
         case 1 : {
             strategy = [[ZXVerticalSplitStrategy alloc] init];
-            ((ZXVerticalSplitStrategy*)strategy).toTop = YES;        }
+            ((ZXVerticalSplitStrategy*)strategy).toTop = YES;
+        }
             break;
         case 2 : {
             strategy = [[ZXQuarterSplitStrategy alloc] init];
@@ -97,6 +100,12 @@
             break;
     }
     return strategy;
+}
+
+- (id<ZXScreenSplitStrategy>) create3X3StrategyWithIndex:(unsigned int)index {
+    ZXSuDoKuSplitStrategy *sudokuStrategy = [[ZXSuDoKuSplitStrategy alloc] init];
+    sudokuStrategy.toIndex = index;
+    return sudokuStrategy;
 }
 
 @end
