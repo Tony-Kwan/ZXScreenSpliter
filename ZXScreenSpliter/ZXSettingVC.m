@@ -17,11 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
 }
 
 - (IBAction)onQuit:(id)sender {
     [NSApp terminate:[NSApplication sharedApplication]];
+}
+- (IBAction)onHotKeyFieldValueChange:(id)sender {
+    NSLog(@"%@", sender);
 }
 
 @end
