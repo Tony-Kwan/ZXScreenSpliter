@@ -20,12 +20,13 @@
 @interface AppDelegate ()
 @property (nonatomic, strong) ZXScreenSpliter *screenSpliter;
 @property (nonatomic, strong) ZXGlobalHotKeyMonitor *hotKeyMonitor;
+@property (nonatomic, strong) NSStatusItem *statusItem;
 @end
 
 @implementation AppDelegate
 
 - (void)applicationWillFinishLaunching:(NSNotification *)notification {
-    [NSApp setActivationPolicy: NSApplicationActivationPolicyProhibited];
+//    [NSApp setActivationPolicy: NSApplicationActivationPolicyProhibited];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -42,6 +43,16 @@
             [weakSelf splitScreenWithSplitStrategy:splitStrategy];
         }
     }];
+    
+    self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    [self.statusItem setImage:[NSImage imageNamed:@"statusIcon"]];
+    [self.statusItem setHighlightMode:YES];
+    [self.statusItem setAction:@selector(onStatusItemClicked:)];
+    [self.statusItem setTarget:self];
+}
+
+- (void) onStatusItemClicked:(id)sender {
+    NSLog(@"On Status Item Click");
 }
 
 - (void) splitScreenWithSplitStrategy:(id<ZXScreenSplitStrategy>)strategy {
