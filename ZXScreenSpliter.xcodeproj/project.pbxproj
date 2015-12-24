@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		E936B3EF1C2BA52C00544BD2 /* statusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E936B3EE1C2BA52C00544BD2 /* statusIcon.png */; };
+		E936B4121C2BDD4300544BD2 /* ZXSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E936B4101C2BDD4300544BD2 /* ZXSettingVC.m */; };
+		E936B4131C2BDD4300544BD2 /* ZXSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E936B4111C2BDD4300544BD2 /* ZXSettingVC.xib */; };
 		E9B2604B1C2ACED300747FED /* ZXSuDoKuSplitStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B2604A1C2ACED300747FED /* ZXSuDoKuSplitStrategy.m */; };
 		E9C7C53C1C2AC236001B4231 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7C53B1C2AC236001B4231 /* AppDelegate.m */; };
 		E9C7C53F1C2AC236001B4231 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7C53E1C2AC236001B4231 /* main.m */; };
-		E9C7C5421C2AC236001B4231 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7C5411C2AC236001B4231 /* ViewController.m */; };
 		E9C7C5441C2AC236001B4231 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9C7C5431C2AC236001B4231 /* Assets.xcassets */; };
 		E9C7C5471C2AC236001B4231 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9C7C5451C2AC236001B4231 /* Main.storyboard */; };
 		E9C7C55D1C2AC256001B4231 /* ZXFullScreenSplitStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7C5511C2AC256001B4231 /* ZXFullScreenSplitStrategy.m */; };
@@ -24,14 +25,15 @@
 
 /* Begin PBXFileReference section */
 		E936B3EE1C2BA52C00544BD2 /* statusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusIcon.png; sourceTree = "<group>"; };
+		E936B40F1C2BDD4300544BD2 /* ZXSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXSettingVC.h; sourceTree = "<group>"; };
+		E936B4101C2BDD4300544BD2 /* ZXSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXSettingVC.m; sourceTree = "<group>"; };
+		E936B4111C2BDD4300544BD2 /* ZXSettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXSettingVC.xib; sourceTree = "<group>"; };
 		E9B260491C2ACED300747FED /* ZXSuDoKuSplitStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXSuDoKuSplitStrategy.h; sourceTree = "<group>"; };
 		E9B2604A1C2ACED300747FED /* ZXSuDoKuSplitStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXSuDoKuSplitStrategy.m; sourceTree = "<group>"; };
 		E9C7C5371C2AC236001B4231 /* ZXScreenSpliter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZXScreenSpliter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C7C53A1C2AC236001B4231 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E9C7C53B1C2AC236001B4231 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E9C7C53E1C2AC236001B4231 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E9C7C5401C2AC236001B4231 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E9C7C5411C2AC236001B4231 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E9C7C5431C2AC236001B4231 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9C7C5461C2AC236001B4231 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9C7C5481C2AC236001B4231 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,10 +85,11 @@
 				E9C7C54E1C2AC256001B4231 /* ZXScreenSpliter */,
 				E9C7C53A1C2AC236001B4231 /* AppDelegate.h */,
 				E9C7C53B1C2AC236001B4231 /* AppDelegate.m */,
-				E9C7C5401C2AC236001B4231 /* ViewController.h */,
-				E9C7C5411C2AC236001B4231 /* ViewController.m */,
 				E936B3EE1C2BA52C00544BD2 /* statusIcon.png */,
 				E9C7C53D1C2AC236001B4231 /* Supporting Files */,
+				E936B40F1C2BDD4300544BD2 /* ZXSettingVC.h */,
+				E936B4101C2BDD4300544BD2 /* ZXSettingVC.m */,
+				E936B4111C2BDD4300544BD2 /* ZXSettingVC.xib */,
 			);
 			path = ZXScreenSpliter;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9C7C5441C2AC236001B4231 /* Assets.xcassets in Resources */,
+				E936B4131C2BDD4300544BD2 /* ZXSettingVC.xib in Resources */,
 				E9C7C5471C2AC236001B4231 /* Main.storyboard in Resources */,
 				E936B3EF1C2BA52C00544BD2 /* statusIcon.png in Resources */,
 			);
@@ -202,8 +206,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9C7C5421C2AC236001B4231 /* ViewController.m in Sources */,
 				E9C7C5611C2AC256001B4231 /* ZXGlobalHotkeyMonitor.m in Sources */,
+				E936B4121C2BDD4300544BD2 /* ZXSettingVC.m in Sources */,
 				E9C7C5621C2AC256001B4231 /* ZXScreenSpliter.m in Sources */,
 				E9C7C55E1C2AC256001B4231 /* ZXHorizontalSplitStrategy.m in Sources */,
 				E9C7C55F1C2AC256001B4231 /* ZXQuarterSplitStrategy.m in Sources */,

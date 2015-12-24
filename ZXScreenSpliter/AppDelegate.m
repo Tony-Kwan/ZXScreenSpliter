@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import "ZXSettingVC.h"
+
 #import "ZXScreenSpliter.h"
 #import "ZXGlobalHotKeyMonitor.h"
 
@@ -21,6 +23,7 @@
 @property (nonatomic, strong) ZXScreenSpliter *screenSpliter;
 @property (nonatomic, strong) ZXGlobalHotKeyMonitor *hotKeyMonitor;
 @property (nonatomic, strong) NSStatusItem *statusItem;
+@property (nonatomic, strong) NSPopover *settingPopover;
 @end
 
 @implementation AppDelegate
@@ -49,10 +52,31 @@
     [self.statusItem setHighlightMode:YES];
     [self.statusItem setAction:@selector(onStatusItemClicked:)];
     [self.statusItem setTarget:self];
+    
+    self.settingPopover = [[NSPopover alloc] init];
+    self.settingPopover.contentViewController = [[ZXSettingVC alloc] initWithNibName:@"ZXSettingVC" bundle:nil];
 }
 
-- (void) onStatusItemClicked:(id)sender {
+- (void) applicationWillTerminate:(NSNotification *)notification {
+    NSLog(@"Terminal");
+}
+
+- (void) showSettingPopover:(NSStatusBarButton*)sender {
+    [self.settingPopover showRelativeToRect:sender.bounds ofView:sender preferredEdge:NSMinYEdge];
+}
+
+- (void) hideSettingPopover:(NSStatusBarButton*)sender {
+    [self.settingPopover performClose:sender];
+}
+
+- (void) onStatusItemClicked:(NSStatusBarButton*)sender {
     NSLog(@"On Status Item Click");
+    if(self.settingPopover.shown) {
+        [self hideSettingPopover:sender];
+    }
+    else {
+        [self showSettingPopover:sender];
+    }
 }
 
 - (void) splitScreenWithSplitStrategy:(id<ZXScreenSplitStrategy>)strategy {
