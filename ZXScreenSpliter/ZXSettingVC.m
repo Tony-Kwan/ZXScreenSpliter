@@ -28,8 +28,9 @@
 }
 
 - (IBAction)onModeChange:(NSPopUpButton*)sender {
-//    NSMenuItem *modeItem = [sender itemAtIndex:sender.selectedTag];
-    NSLog(@"%@ %zd", sender.titleOfSelectedItem, sender.selectedTag);
+    if(self.screenSpliter) {
+        self.screenSpliter.mode = (ZXScreenSpliterMode)sender.indexOfSelectedItem;
+    }
 }
 
 @end

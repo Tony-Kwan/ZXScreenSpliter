@@ -54,7 +54,9 @@ void TestTravelArray(const void *value, void *context) {
     if(err) {
         return NULL;
     }
-    return focusWindowRef;
+    if(focusWindowRef) {
+        return focusWindowRef;
+    }
     
     CFArrayRef windowArray;
     AXError error = AXUIElementCopyAttributeValue(ref, kAXWindowsAttribute, (CFTypeRef*)&windowArray);

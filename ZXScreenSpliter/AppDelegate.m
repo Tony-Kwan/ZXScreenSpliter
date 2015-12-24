@@ -41,7 +41,13 @@
     [self.hotKeyMonitor setOnHotKeyPressed:^(NSString *hotKey, unsigned int hotKeyIndex) {
         NSLog(@"%@ %zd", hotKey, hotKeyIndex);
         
-        id<ZXScreenSplitStrategy> splitStrategy = [weakSelf createNormalStrategyWithIndex:hotKeyIndex];
+        id<ZXScreenSplitStrategy> splitStrategy;
+        if(self.screenSpliter.mode == ZXScreenSpliterMode_Normal) {
+            splitStrategy  = [weakSelf createNormalStrategyWithIndex:hotKeyIndex];
+        }
+        else if(self.screenSpliter.mode == ZXScreenSpliterMode_LargeScreen) {
+            splitStrategy = [weakSelf create3X3StrategyWithIndex:hotKeyIndex];
+        }
         if(splitStrategy != nil) {
             [weakSelf splitScreenWithSplitStrategy:splitStrategy];
         }
@@ -53,8 +59,11 @@
     [self.statusItem setAction:@selector(onStatusItemClicked:)];
     [self.statusItem setTarget:self];
     
+    ZXSettingVC *settingVC = [[ZXSettingVC alloc] initWithNibName:@"ZXSettingVC" bundle:nil];
+    settingVC.screenSpliter = self.screenSpliter;
+    
     self.settingPopover = [[NSPopover alloc] init];
-    self.settingPopover.contentViewController = [[ZXSettingVC alloc] initWithNibName:@"ZXSettingVC" bundle:nil];
+    self.settingPopover.contentViewController = settingVC;
 }
 
 - (void) applicationWillTerminate:(NSNotification *)notification {

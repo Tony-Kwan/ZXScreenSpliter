@@ -8,7 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSUInteger, ZXScreenSpliterMode) {
+    ZXScreenSpliterMode_Normal,
+    ZXScreenSpliterMode_LargeScreen,
+    ZXScreenSpliterMode_Off,
+};
+
 @interface ZXScreenSpliter : NSObject
+
+@property (nonatomic, assign) ZXScreenSpliterMode mode;
 
 - (BOOL) moveTopWindowToFrame:(CGRect)newFrame;
 

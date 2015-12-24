@@ -7,7 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ZXScreenSpliter.h"
+#import "ZXGlobalHotkeyMonitor.h"
 
 @interface ZXSettingVC : NSViewController
+
+@property (nonatomic, weak) ZXScreenSpliter *screenSpliter;
 
 @end
