@@ -22,8 +22,14 @@
 - (IBAction)onQuit:(id)sender {
     [NSApp terminate:[NSApplication sharedApplication]];
 }
-- (IBAction)onHotKeyFieldValueChange:(id)sender {
+
+- (IBAction)onHotKeyFieldValueChange:(NSTextField*)sender {
     NSLog(@"%@", sender);
+}
+
+- (IBAction)onModeChange:(NSPopUpButton*)sender {
+//    NSMenuItem *modeItem = [sender itemAtIndex:sender.selectedTag];
+    NSLog(@"%@ %zd", sender.titleOfSelectedItem, sender.selectedTag);
 }
 
 @end
