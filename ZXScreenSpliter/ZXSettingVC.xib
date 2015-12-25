@@ -135,12 +135,12 @@
                 </textField>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BTP-Gu-tCI">
                     <rect key="frame" x="18" y="330" width="263" height="26"/>
-                    <popUpButtonCell key="cell" type="push" title="Normal" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="9yW-Qt-gci" id="Oq2-VV-WMa">
+                    <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="Oq2-VV-WMa">
                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="menu"/>
                         <menu key="menu" id="PT7-86-vob">
                             <items>
-                                <menuItem title="Normal" state="on" id="9yW-Qt-gci"/>
+                                <menuItem title="Normal" id="9yW-Qt-gci"/>
                                 <menuItem title="Large Screen" id="OXt-F0-pGE"/>
                                 <menuItem title="Off" id="Wdh-Bm-2DS"/>
                             </items>
