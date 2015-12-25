@@ -14,12 +14,12 @@
     CGRect frame = [[NSScreen mainScreen] visibleFrame];
     if(self.toIndex > 4) return frame;
     
-    CGFloat halfWidth = floor(CGRectGetWidth(frame)/2.f);
-    CGFloat halfHeight = floor(CGRectGetHeight(frame)/2.f);
-    frame.origin.x += (self.toIndex % 2) * halfWidth;
-    frame.origin.y = (self.toIndex / 2) * halfHeight + 23;
-    frame.size.width = halfWidth;
-    frame.size.height = halfHeight;
+    CGFloat dstWidth = floor(CGRectGetWidth(frame)*0.5);
+    CGFloat dstHeight = floor(CGRectGetHeight(frame)*0.3);
+    frame.origin.x += (self.toIndex % 2) * dstWidth;
+    frame.origin.y = (self.toIndex / 2) * dstHeight + 23;
+    frame.size.width = dstWidth;
+    frame.size.height = self.toIndex > 1 ? frame.size.height-dstHeight : dstHeight;
     return frame;
 }
 
