@@ -34,7 +34,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="GLr-Op-FFt">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="101" translatesAutoresizingMaskIntoConstraints="NO" id="GLr-Op-FFt">
                     <rect key="frame" x="192" y="208" width="34" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="W" drawsBackground="YES" id="VX6-fd-Ma1">
                         <font key="font" metaFont="system"/>
@@ -43,9 +43,10 @@
                     </textFieldCell>
                     <connections>
                         <action selector="onHotKeyFieldValueChange:" target="-2" id="HQj-8D-65Z"/>
+                        <outlet property="delegate" destination="-2" id="e5t-xl-hwe"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="J2L-nP-UAs">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="104" translatesAutoresizingMaskIntoConstraints="NO" id="J2L-nP-UAs">
                     <rect key="frame" x="192" y="176" width="34" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="S" drawsBackground="YES" id="oqK-iU-VOv">
                         <font key="font" metaFont="system"/>
@@ -54,9 +55,10 @@
                     </textFieldCell>
                     <connections>
                         <action selector="onHotKeyFieldValueChange:" target="-2" id="UIa-o0-ZY6"/>
+                        <outlet property="delegate" destination="-2" id="Qee-bo-dnH"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="7" translatesAutoresizingMaskIntoConstraints="NO" id="cbt-d2-Qrq">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="107" translatesAutoresizingMaskIntoConstraints="NO" id="cbt-d2-Qrq">
                     <rect key="frame" x="192" y="144" width="34" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="X" drawsBackground="YES" id="epi-Qs-Azg">
                         <font key="font" metaFont="system"/>
@@ -65,20 +67,10 @@
                     </textFieldCell>
                     <connections>
                         <action selector="onHotKeyFieldValueChange:" target="-2" id="U2J-p8-6bY"/>
+                        <outlet property="delegate" destination="-2" id="myO-Zz-zu0"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="c7L-HB-PeT">
-                    <rect key="frame" x="150" y="144" width="34" height="22"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="Z" drawsBackground="YES" id="aE5-Su-2O7">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                    <connections>
-                        <action selector="onHotKeyFieldValueChange:" target="-2" id="SLk-pY-CmP"/>
-                    </connections>
-                </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="w1x-yc-upR">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="103" translatesAutoresizingMaskIntoConstraints="NO" id="w1x-yc-upR">
                     <rect key="frame" x="150" y="176" width="34" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="A" drawsBackground="YES" id="oJt-oY-0Pu">
                         <font key="font" metaFont="system"/>
@@ -87,9 +79,10 @@
                     </textFieldCell>
                     <connections>
                         <action selector="onHotKeyFieldValueChange:" target="-2" id="VEM-M4-RF7"/>
+                        <outlet property="delegate" destination="-2" id="ZtD-5K-m7T"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Yp-e2-lt7">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="100" translatesAutoresizingMaskIntoConstraints="NO" id="8Yp-e2-lt7">
                     <rect key="frame" x="150" y="208" width="34" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="Q" drawsBackground="YES" id="uVx-da-HW9">
                         <font key="font" metaFont="system"/>
@@ -98,9 +91,10 @@
                     </textFieldCell>
                     <connections>
                         <action selector="onHotKeyFieldValueChange:" target="-2" id="Zfs-vv-Jb3"/>
+                        <outlet property="delegate" destination="-2" id="7hc-ad-ATH"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="5" translatesAutoresizingMaskIntoConstraints="NO" id="PlM-bk-ERO">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="105" translatesAutoresizingMaskIntoConstraints="NO" id="PlM-bk-ERO">
                     <rect key="frame" x="234" y="176" width="34" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="D" drawsBackground="YES" id="Tg9-b9-2Zt">
                         <font key="font" metaFont="system"/>
@@ -109,9 +103,10 @@
                     </textFieldCell>
                     <connections>
                         <action selector="onHotKeyFieldValueChange:" target="-2" id="QAR-ZE-7QS"/>
+                        <outlet property="delegate" destination="-2" id="XoE-A7-ntU"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="8" translatesAutoresizingMaskIntoConstraints="NO" id="PUN-Qq-d2P">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="108" translatesAutoresizingMaskIntoConstraints="NO" id="PUN-Qq-d2P">
                     <rect key="frame" x="234" y="144" width="34" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="C" drawsBackground="YES" id="HaF-G3-yVx">
                         <font key="font" metaFont="system"/>
@@ -120,9 +115,10 @@
                     </textFieldCell>
                     <connections>
                         <action selector="onHotKeyFieldValueChange:" target="-2" id="ueJ-Vq-u7p"/>
+                        <outlet property="delegate" destination="-2" id="sff-ZD-J34"/>
                     </connections>
                 </textField>
-                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="BuI-oQ-lX6">
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="102" translatesAutoresizingMaskIntoConstraints="NO" id="BuI-oQ-lX6">
                     <rect key="frame" x="234" y="208" width="34" height="22"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="E" drawsBackground="YES" id="jab-Dy-EFZ">
                         <font key="font" metaFont="system"/>
@@ -131,6 +127,7 @@
                     </textFieldCell>
                     <connections>
                         <action selector="onHotKeyFieldValueChange:" target="-2" id="L0U-EZ-IZP"/>
+                        <outlet property="delegate" destination="-2" id="NlH-I5-fKT"/>
                     </connections>
                 </textField>
                 <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="BTP-Gu-tCI">
@@ -150,6 +147,18 @@
                         </connections>
                     </popUpButtonCell>
                 </popUpButton>
+                <textField verticalHuggingPriority="750" fixedFrame="YES" tag="106" translatesAutoresizingMaskIntoConstraints="NO" id="c7L-HB-PeT">
+                    <rect key="frame" x="150" y="144" width="34" height="22"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" alignment="center" title="Z" drawsBackground="YES" id="aE5-Su-2O7">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                    <connections>
+                        <action selector="onHotKeyFieldValueChange:" target="-2" id="SLk-pY-CmP"/>
+                        <outlet property="delegate" destination="-2" id="sN7-vW-9uD"/>
+                    </connections>
+                </textField>
             </subviews>
             <constraints>
                 <constraint firstItem="ayp-pz-V6d" firstAttribute="centerX" secondItem="Hz6-mo-xeY" secondAttribute="centerX" id="EOK-3i-gWG"/>

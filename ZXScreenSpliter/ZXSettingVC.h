@@ -13,5 +13,6 @@
 @interface ZXSettingVC : NSViewController
 
 @property (nonatomic, weak) ZXScreenSpliter *screenSpliter;
+@property (nonatomic, weak) ZXGlobalHotKeyMonitor *hotKeyMonitor;
 
 @end

@@ -80,4 +80,6 @@
 
 @property (nonatomic, copy) void (^onHotKeyPressed)(NSString *hotKey, unsigned int hotKeyIndex);
 
+- (BOOL) mapHotKey:(NSString*)hotKey toIndex:(unsigned int)index;
+
 @end

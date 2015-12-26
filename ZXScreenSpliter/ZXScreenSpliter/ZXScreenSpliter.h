@@ -18,6 +18,8 @@ typedef NS_ENUM(NSUInteger, ZXScreenSpliterMode) {
 
 @property (nonatomic, assign) ZXScreenSpliterMode mode;
 
-- (BOOL) moveTopWindowToFrame:(CGRect)newFrame;
+- (BOOL) moveToIndex:(unsigned int)hotKeyIndex;
+
+//- (BOOL) moveTopWindowToFrame:(CGRect)newFrame;
 
 @end

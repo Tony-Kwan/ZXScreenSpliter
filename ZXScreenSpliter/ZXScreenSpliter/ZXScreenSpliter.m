@@ -10,6 +10,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "ZXFullScreenSplitStrategy.h"   //1X1
+#import "ZXHorizontalSplitStrategy.h"   //1X2
+#import "ZXVerticalSplitStrategy.h"     //2X1
+#import "ZXQuarterSplitStrategy.h"      //2X2
+#import "ZXSuDoKuSplitStrategy.h"       //3X3
+
 #pragma mark - C method
 void TestTravelArray(const void *value, void *context) {
     NSLog(@"%@", value);
@@ -32,6 +38,22 @@ void TestTravelArray(const void *value, void *context) {
 }
 
 #pragma mark - public method
+- (BOOL) moveToIndex:(unsigned int)hotKeyIndex {
+    id<ZXScreenSplitStrategy> splitStrategy;
+    if(self.mode == ZXScreenSpliterMode_Normal) {
+        splitStrategy  = [self createNormalStrategyWithIndex:hotKeyIndex];
+    }
+    else if(self.mode == ZXScreenSpliterMode_LargeScreen) {
+        splitStrategy = [self create3X3StrategyWithIndex:hotKeyIndex];
+    }
+    if(splitStrategy != nil) {
+        CGRect rect = [splitStrategy calculateDstFrame];
+        return [self moveTopWindowToFrame:rect];
+    }
+    return NO;
+}
+
+#pragma mark - private method
 - (BOOL) moveTopWindowToFrame:(CGRect)newFrame {
     AXUIElementRef windowRef = [self getTopWindowRef];
     if(windowRef == NULL) {
@@ -45,7 +67,6 @@ void TestTravelArray(const void *value, void *context) {
     return (posError==kAXErrorSuccess && sizeError==kAXErrorSuccess);
 }
 
-#pragma mark - private method
 - (AXUIElementRef) getTopWindowRef {
     NSRunningApplication *app = [[NSWorkspace sharedWorkspace] frontmostApplication];
     AXUIElementRef ref = AXUIElementCreateApplication([app processIdentifier]);
@@ -71,6 +92,67 @@ void TestTravelArray(const void *value, void *context) {
     AXUIElementRef windowRef = (AXUIElementRef)CFArrayGetValueAtIndex(windowArray, 1);
     CFArrayApplyFunction(windowArray, CFRangeMake(0, count), TestTravelArray, nil);
     return windowRef;
+}
+
+#pragma mark - strategy
+- (id<ZXScreenSplitStrategy>) createNormalStrategyWithIndex:(unsigned int)index {
+    id<ZXScreenSplitStrategy> strategy = nil;
+    
+    switch (index) {
+        case 0 : {
+            strategy = [[ZXQuarterSplitStrategy alloc] init];
+            ((ZXQuarterSplitStrategy*)strategy).toIndex = 0;
+        }
+            break;
+        case 1 : {
+            strategy = [[ZXVerticalSplitStrategy alloc] init];
+            ((ZXVerticalSplitStrategy*)strategy).toTop = YES;
+        }
+            break;
+        case 2 : {
+            strategy = [[ZXQuarterSplitStrategy alloc] init];
+            ((ZXQuarterSplitStrategy*)strategy).toIndex = 1;
+        }
+            break;
+        case 3 : {
+            strategy = [[ZXHorizontalSplitStrategy alloc] init];
+            ((ZXHorizontalSplitStrategy*)strategy).toLeft = YES;
+        }
+            break;
+        case 4 : {
+            strategy = [[ZXFullScreenSplitStrategy alloc] init];
+        }
+            break;
+        case 5 : {
+            strategy = [[ZXHorizontalSplitStrategy alloc] init];
+            ((ZXHorizontalSplitStrategy*)strategy).toLeft = NO;
+        }
+            break;
+        case 6 : {
+            strategy = [[ZXQuarterSplitStrategy alloc] init];
+            ((ZXQuarterSplitStrategy*)strategy).toIndex = 2;
+        }
+            break;
+        case 7 : {
+            strategy = [[ZXVerticalSplitStrategy alloc] init];
+            ((ZXVerticalSplitStrategy*)strategy).toTop = NO;
+        }
+            break;
+        case 8 : {
+            strategy = [[ZXQuarterSplitStrategy alloc] init];
+            ((ZXQuarterSplitStrategy*)strategy).toIndex = 3;
+        }
+            break;
+        default:
+            break;
+    }
+    return strategy;
+}
+
+- (id<ZXScreenSplitStrategy>) create3X3StrategyWithIndex:(unsigned int)index {
+    ZXSuDoKuSplitStrategy *sudokuStrategy = [[ZXSuDoKuSplitStrategy alloc] init];
+    sudokuStrategy.toIndex = index;
+    return sudokuStrategy;
 }
 
 #pragma mark - getter
