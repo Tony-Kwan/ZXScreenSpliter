@@ -141,8 +141,8 @@
                         <menu key="menu" id="PT7-86-vob">
                             <items>
                                 <menuItem title="Normal" id="9yW-Qt-gci"/>
-                                <menuItem title="Large Screen" id="OXt-F0-pGE"/>
-                                <menuItem title="Off" id="Wdh-Bm-2DS"/>
+                                <menuItem title="SuDoKu" id="OXt-F0-pGE"/>
+                                <menuItem title="Disable" id="Wdh-Bm-2DS"/>
                             </items>
                         </menu>
                         <connections>

@@ -24,6 +24,7 @@
 @property (nonatomic, strong) ZXGlobalHotKeyMonitor *hotKeyMonitor;
 @property (nonatomic, strong) NSStatusItem *statusItem;
 @property (nonatomic, strong) NSPopover *settingPopover;
+@property (nonatomic, strong) id popoverTransiencyMonitor;
 @end
 
 @implementation AppDelegate
@@ -54,16 +55,16 @@
     }];
     
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    [self.statusItem setImage:[NSImage imageNamed:@"statusIcon"]];
-    [self.statusItem setHighlightMode:YES];
-    [self.statusItem setAction:@selector(onStatusItemClicked:)];
-    [self.statusItem setTarget:self];
+    [self.statusItem.button setImage:[NSImage imageNamed:@"statusIcon"]];
+    [self.statusItem.button setTarget:self];
+    [self.statusItem.button setAction:@selector(onStatusItemClicked:)];
     
     ZXSettingVC *settingVC = [[ZXSettingVC alloc] initWithNibName:@"ZXSettingVC" bundle:nil];
     settingVC.screenSpliter = self.screenSpliter;
     
     self.settingPopover = [[NSPopover alloc] init];
     self.settingPopover.contentViewController = settingVC;
+    self.settingPopover.behavior = NSPopoverBehaviorTransient;
 }
 
 - (void) applicationWillTerminate:(NSNotification *)notification {
@@ -72,10 +73,20 @@
 
 - (void) showSettingPopover:(NSStatusBarButton*)sender {
     [self.settingPopover showRelativeToRect:sender.bounds ofView:sender preferredEdge:NSMinYEdge];
+    
+    if(self.popoverTransiencyMonitor == nil) {
+        self.popoverTransiencyMonitor = [NSEvent addGlobalMonitorForEventsMatchingMask:NSLeftMouseDownMask|NSRightMouseDownMask handler:^(NSEvent * _Nonnull event) {
+            [self hideSettingPopover:sender];
+        }];
+    }
 }
 
 - (void) hideSettingPopover:(NSStatusBarButton*)sender {
     [self.settingPopover performClose:sender];
+    if(self.popoverTransiencyMonitor) {
+        [NSEvent removeMonitor:self.popoverTransiencyMonitor];
+        self.popoverTransiencyMonitor = nil;
+    }
 }
 
 - (void) onStatusItemClicked:(NSStatusBarButton*)sender {
