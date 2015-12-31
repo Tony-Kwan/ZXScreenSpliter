@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E91FF1611C352AD00025F57F /* statusIcon_white.png in Resources */ = {isa = PBXBuildFile; fileRef = E91FF15F1C352AD00025F57F /* statusIcon_white.png */; };
+		E91FF1621C352AD00025F57F /* statusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E91FF1601C352AD00025F57F /* statusIcon.png */; };
 		E936B4121C2BDD4300544BD2 /* ZXSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E936B4101C2BDD4300544BD2 /* ZXSettingVC.m */; };
 		E936B4131C2BDD4300544BD2 /* ZXSettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = E936B4111C2BDD4300544BD2 /* ZXSettingVC.xib */; };
 		E9B2604B1C2ACED300747FED /* ZXSuDoKuSplitStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B2604A1C2ACED300747FED /* ZXSuDoKuSplitStrategy.m */; };
@@ -20,10 +22,11 @@
 		E9C7C5601C2AC256001B4231 /* ZXVerticalSplitStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7C5581C2AC256001B4231 /* ZXVerticalSplitStrategy.m */; };
 		E9C7C5611C2AC256001B4231 /* ZXGlobalHotkeyMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7C55A1C2AC256001B4231 /* ZXGlobalHotkeyMonitor.m */; };
 		E9C7C5621C2AC256001B4231 /* ZXScreenSpliter.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7C55C1C2AC256001B4231 /* ZXScreenSpliter.m */; };
-		E9E42FBF1C2C53510028094F /* statusIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E9E42FBE1C2C53510028094F /* statusIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E91FF15F1C352AD00025F57F /* statusIcon_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusIcon_white.png; sourceTree = "<group>"; };
+		E91FF1601C352AD00025F57F /* statusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusIcon.png; sourceTree = "<group>"; };
 		E936B40F1C2BDD4300544BD2 /* ZXSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXSettingVC.h; sourceTree = "<group>"; };
 		E936B4101C2BDD4300544BD2 /* ZXSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXSettingVC.m; sourceTree = "<group>"; };
 		E936B4111C2BDD4300544BD2 /* ZXSettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZXSettingVC.xib; sourceTree = "<group>"; };
@@ -49,7 +52,6 @@
 		E9C7C55A1C2AC256001B4231 /* ZXGlobalHotkeyMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXGlobalHotkeyMonitor.m; sourceTree = "<group>"; };
 		E9C7C55B1C2AC256001B4231 /* ZXScreenSpliter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXScreenSpliter.h; sourceTree = "<group>"; };
 		E9C7C55C1C2AC256001B4231 /* ZXScreenSpliter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXScreenSpliter.m; sourceTree = "<group>"; };
-		E9E42FBE1C2C53510028094F /* statusIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = statusIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +90,8 @@
 				E936B40F1C2BDD4300544BD2 /* ZXSettingVC.h */,
 				E936B4101C2BDD4300544BD2 /* ZXSettingVC.m */,
 				E936B4111C2BDD4300544BD2 /* ZXSettingVC.xib */,
-				E9E42FBE1C2C53510028094F /* statusIcon.png */,
+				E91FF15F1C352AD00025F57F /* statusIcon_white.png */,
+				E91FF1601C352AD00025F57F /* statusIcon.png */,
 				E9C7C53D1C2AC236001B4231 /* Supporting Files */,
 			);
 			path = ZXScreenSpliter;
@@ -192,8 +195,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E91FF1621C352AD00025F57F /* statusIcon.png in Resources */,
+				E91FF1611C352AD00025F57F /* statusIcon_white.png in Resources */,
 				E9C7C5441C2AC236001B4231 /* Assets.xcassets in Resources */,
-				E9E42FBF1C2C53510028094F /* statusIcon.png in Resources */,
 				E936B4131C2BDD4300544BD2 /* ZXSettingVC.xib in Resources */,
 				E9C7C5471C2AC236001B4231 /* Main.storyboard in Resources */,
 			);

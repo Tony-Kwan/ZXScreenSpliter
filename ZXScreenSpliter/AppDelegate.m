@@ -35,7 +35,9 @@
     }];
     
     self.statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-    [self.statusItem.button setImage:[NSImage imageNamed:@"statusIcon"]];
+    NSImage *icon = [NSImage imageNamed:@"statusIcon"];
+    [icon setTemplate:YES];
+    [self.statusItem.button setImage:icon];
     [self.statusItem.button setTarget:self];
     [self.statusItem.button setAction:@selector(onStatusItemClicked:)];
     

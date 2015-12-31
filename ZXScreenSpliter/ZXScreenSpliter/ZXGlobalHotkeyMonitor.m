@@ -62,6 +62,8 @@
              @"7" : @(kVK_ANSI_7),
              @"8" : @(kVK_ANSI_8),
              @"9" : @(kVK_ANSI_9),
+             
+             @" " : @(kVK_Space),
              };
 }
 
@@ -149,7 +151,7 @@
                          @"D" : @(5),
                          @"Z" : @(6),
                          @"X" : @(7),
-                         @"C" : @(8),
+                         @"V" : @(8),
                          };
     }
     self.hotKeyToIndexMapper = [hotKeymapper mutableCopy];
