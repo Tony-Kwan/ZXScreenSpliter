@@ -63,7 +63,7 @@
              @"8" : @(kVK_ANSI_8),
              @"9" : @(kVK_ANSI_9),
              
-             @" " : @(kVK_Space),
+//             @" " : @(kVK_Space),
              };
 }
 
@@ -129,7 +129,10 @@
     EventHotKeyRef hotKeyRef = (__bridge EventHotKeyRef)([self.hotKeyRefDict objectForKey:@(index)]);
     UnregisterEventHotKey(hotKeyRef);
     
-    [self registerWithHotKey:hotKey hotKeyIndex:@(index)];
+    BOOL succ = [self registerWithHotKey:hotKey hotKeyIndex:@(index)];
+    if(succ == NO) {
+        return NO;
+    }
     
     [[NSUserDefaults standardUserDefaults] setObject:[NSDictionary dictionaryWithDictionary:self.hotKeyToIndexMapper] forKey:ZXHotKeyMapperStoreKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
