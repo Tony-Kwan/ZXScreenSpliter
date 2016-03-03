@@ -17,7 +17,7 @@
     dstFrame.origin.y = 23;
     dstFrame.size.height = dstHeight;
     if(self.isToTop == NO) {
-        dstFrame.origin.y = (frame.origin.y + frame.size.height) - dstHeight - 23;
+        dstFrame.origin.y = (frame.origin.y + frame.size.height) - dstHeight + 23;
     }
     
     return dstFrame;
